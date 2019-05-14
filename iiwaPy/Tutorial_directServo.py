@@ -7,7 +7,7 @@ Created on Mon Mar 26 17:03:26 2018
 Test script of iiwaPy class.
 
 """
-from sunrisePy import sunrisePy
+from iiwaPy.sunrisePy import sunrisePy
 import math
 import time
 from datetime import datetime

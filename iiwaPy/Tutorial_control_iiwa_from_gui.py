@@ -8,7 +8,7 @@ Example for controlling iiwa using GUI from an external PC
 """
 
 from tkinter import *
-from sunrisePy import sunrisePy
+from iiwaPy.sunrisePy import sunrisePy
 
 
 

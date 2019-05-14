@@ -1,12 +1,9 @@
-from distutils.core import setup
-from distutils.command.install_data import install_data
-
+from setuptools import setup, find_packages
 setup(
     name="iiwaPy",
     version="0.1",
     description="Python library to control a IIWA LBR robot",
-    packages=["iiwaPy"],
-    provides=["iiwaPy"],
+    packages=find_packages("iiwaPy"),
     classifiers=[
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",
