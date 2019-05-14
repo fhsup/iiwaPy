@@ -1,4 +1,4 @@
-from sunrisePy import sunrisePy
+from iiwaPy.sunrisePy import sunrisePy
 import time
 import numpy as np
 from math import pi

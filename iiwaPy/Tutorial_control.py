@@ -1,4 +1,4 @@
-from sunrisePy import sunrisePy
+from iiwaPy.sunrisePy import sunrisePy
 import time
 import numpy as np
 ip='172.31.1.148'

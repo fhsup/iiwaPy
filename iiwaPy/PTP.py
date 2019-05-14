@@ -6,9 +6,9 @@ Created on Wed Mar 28 18:44:35 2018
 """
 import math
 from io import BytesIO
-from Senders import Senders
-from Getters import Getters
-from check import check_size, check_scalar, check_non_zero, checkAcknowledgment
+from iiwaPy.Senders import Senders
+from iiwaPy.Getters import Getters
+from iiwaPy.check import check_size, check_scalar, check_non_zero, checkAcknowledgment
 import numpy as np
 
 

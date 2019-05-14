@@ -1,10 +1,10 @@
-from mySock import mySock
-from Getters import Getters
-from Setters import Setters
-from RealTime import RealTime
-from Senders import Senders
-from PTP import PTP
-from check import check_size, checkAcknowledgment 
+from iiwaPy.mySock import mySock
+from iiwaPy.Getters import Getters
+from iiwaPy.Setters import Setters
+from iiwaPy.RealTime import RealTime
+from iiwaPy.Senders import Senders
+from iiwaPy.PTP import PTP
+from iiwaPy.check import check_size, checkAcknowledgment 
 
 class sunrisePy:
     getters=0
@@ -44,7 +44,6 @@ class sunrisePy:
         check_size(6,"Flange frame" ,ts)
 
         command=self.__createCommand("TFtrans", ts)
-        print(command) 
         msg=self.send(command)
         print(msg)
         checkAcknowledgment(msg) 

@@ -5,7 +5,7 @@ Created on Tue Mar 27 14:42:39 2018
 @author: Mohammad SAFEEA
 """
 
-from GeneralPurpose import getDoubleFromString
+from iiwaPy.GeneralPurpose import getDoubleFromString
 
 
 class Getters:

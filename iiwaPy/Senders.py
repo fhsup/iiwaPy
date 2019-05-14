@@ -8,8 +8,8 @@ Created on Tue Mar 27 17:36:18 2018
 from io import BytesIO
 import math
 import numpy as np
-from GeneralPurpose import getDoubleFromString
-from check import check_size
+from iiwaPy.GeneralPurpose import getDoubleFromString
+from iiwaPy.check import check_size
 
 
 class Senders:
