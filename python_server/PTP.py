@@ -8,22 +8,11 @@ import math
 from io import BytesIO
 from Senders import Senders
 from Getters import Getters
-from check import check_size, check_scalar, check_non_zero
+from check import check_size, check_scalar, check_non_zero, checkAcknowledgment
 import numpy as np
 
 
-def checkAcknowledgment(msg):
-    ak="done"
-    nak="nak"
-    print(msg)
-    if msg=="":
-        return False
-    if (msg==nak):
-        return False
-    if msg==ak:
-        return True
-    else:
-        return False
+
 class PTP:
     
     def __init__(self,mysoc):

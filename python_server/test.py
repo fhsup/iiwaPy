@@ -71,10 +71,11 @@ start_time = datetime.now()
 
 jointHome = [0,0,0,-pi/2,0,pi/2,0]
 relVel = 0.1
+iiwa.attachToolToFlange([-1.5,1.54,152.80,0,0,0])
 
 iiwa.movePTPJointSpace(jointHome,relVel)
 
-vel=10
+vel=20
 p1 = iiwa.getEEFPos()
 p1[0]+=30
 iiwa.movePTPLineEEF(p1,vel)

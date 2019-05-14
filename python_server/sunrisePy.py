@@ -4,6 +4,7 @@ from Setters import Setters
 from RealTime import RealTime
 from Senders import Senders
 from PTP import PTP
+from check import check_size, checkAcknowledgment 
 
 class sunrisePy:
     getters=0
@@ -23,9 +24,31 @@ class sunrisePy:
         self.soc.close()
     
     def send(self,data):
-        self.soc.send(data)
-        self.soc.receive()
-# PTP motion
+        self.soc.send(data+b"\n")
+        msg=self.soc.receive()
+        return msg
+
+    def __createCommand(self,name, data ):
+        command_list = [name]+list(map(str,data))+ [""]
+        command = "_".join(command_list).encode("ascii")
+        return command
+
+    def __blockUntilAcknowledgment(self):
+        while(True):
+            msg = self.mysoc.receive()
+            if (checkAcknowledgment(msg)):
+                break
+
+
+    def attachToolToFlange(self, ts):
+        check_size(6,"Flange frame" ,ts)
+
+        command=self.__createCommand("TFtrans", ts)
+        print(command) 
+        msg=self.send(command)
+        print(msg)
+        checkAcknowledgment(msg) 
+    # PTP motion
     """
     Joint space motion
     """
