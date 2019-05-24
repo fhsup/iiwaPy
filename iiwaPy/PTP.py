@@ -124,27 +124,39 @@ class PTP:
         theCommand=b'doPTPinCSCircle1_'
         self.send(theCommand)
         self.blockUntilAcknowledgment()
-    def movePTPLineEEF(self,pos,vel):
+
+    def movePTPLineEEF(self,pos,vel,orientationVel=1):
         check_size(6,"Position ", pos)
         check_scalar("Velocity", vel)
+        check_scalar("Orientation velocity", orientationVel)
 
         command = self.createCommand("jRelVel",vel)
-        
-        #
         self.send(command)
+
+        command = self.createCommand("jOrientationVel",orientationVel)
+        self.send(command)
+
+
+
+        #
         self.sender.sendEEfPositions(pos)
 
         theCommand=b'doPTPinCS_'
         self.send(theCommand)
         self.blockUntilAcknowledgment() 
             
-    def movePTPLineEEFRelEEF(self,pos,vel):
+    def movePTPLineEEFRelEEF(self,pos,vel,orientationVel=1):
         check_size(3,"Position ", pos)
         check_scalar("Velocity", vel)
+        check_scalar("Orientation velocity", orientationVel)
 
         command = self.createCommand("jRelVel",vel)
-
         self.send(command)
+
+        command = self.createCommand("jOrientationVel",orientationVel)
+        self.send(command)
+
+
         newPos=[0,0,0,0,0,0]
         newPos[0]=pos[0]
         newPos[1]=pos[1]
@@ -155,12 +167,18 @@ class PTP:
         self.send(theCommand)
         self.blockUntilAcknowledgment()
 
-    def movePTPLineEEFRelBase(self,pos,vel):
+    def movePTPLineEEFRelBase(self,pos,vel,orientationVel=1):
         check_size(3,"Position ", pos)
         check_scalar("Velocity", vel)
+        check_scalar("Orientation velocity", orientationVel)
 
         command = self.createCommand("jRelVel",vel)
         self.send(command)
+
+        command = self.createCommand("jOrientationVel",orientationVel)
+        self.send(command)
+
+
 
         newPos=[0,0,0,0,0,0,0]
         newPos[0]=pos[0]

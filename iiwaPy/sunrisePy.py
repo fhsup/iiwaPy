@@ -62,14 +62,14 @@ class sunrisePy:
     """
     Cartesian linear  motion
     """        
-    def movePTPLineEEF(self,pos,vel):
-        self.ptp.movePTPLineEEF(pos,vel)
+    def movePTPLineEEF(self,pos,vel, orientationVel):
+        self.ptp.movePTPLineEEF(pos,vel, orientationVel)
         
-    def movePTPLineEEFRelBase(self,pos,vel):
-        self.ptp.movePTPLineEEFRelBase(pos,vel)
+    def movePTPLineEEFRelBase(self,pos,vel, orientationVel):
+        self.ptp.movePTPLineEEFRelBase(pos,vel, orientationVel)
         
-    def movePTPLineEEFRelEEF(self,pos,vel):
-        self.ptp.movePTPLineEEFRelEEF(pos,vel)
+    def movePTPLineEEFRelEEF(self,pos,vel, orientationVel):
+        self.ptp.movePTPLineEEFRelEEF(pos,vel, orientationVel)
     """
     Circular motion
     """        
